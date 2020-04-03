@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title> Sentiment Analysis Rest Api</title>
+
+    <link rel = "icon" href =  
+	"https://cdn.iconscout.com/icon/free/png-512/data-science-46-1170621.png" 
+			type = "image/x-icon"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="background-color:rgb(109, 109, 109);">
+    <body>
+        <style>
+            body {
+                font-family: 'Dekko';font-size: 22px;
+                
+            }
+            </style>
+
+
+<div>
+    <center>
+        Sentiment Score
+        
+    </center>
+    <div class="container">
+        <form method="POST" action="{{ url_for('sentiment')}}" id="myForm">
+            
+    
+            <label >Enter Your Text Below</label>
+        <textarea class="form-control" rows="3" cols="2" name="rawText"></textarea>
+    
+        <input type="submit" name="" value="Submit" class="btn btn-primary ">
+        <input type="reset" name= "" value="Clear" class="btn btn-outline-dark">
+        <a href="{{url_for('home')}}" type="button" class="btn btn-danger">Reset</a>
+        
+        </form>
+        
+    </div> 
+
+</div>
+
+<div class="container">
+    <p>Received Text:</p>
+    <div class ="card">
+        <div>
+            <p>{{inText}}</p>
+        </div>
+        <hr/>
+        <table class ="bg-primary">
+    <thead>
+        <tr>
+            <th scole="col">Sentimet</th>
+            <th scole="col">Polarity</th>
+            <th scole="col">Subjectivity</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Score:</th>
+            <td>{{sentiment}}</td>
+            <td>{{subjectivity}}</td>
+        </tr>
+    </tbody>
+
+    </table>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+</html>
+
+
